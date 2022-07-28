@@ -1,9 +1,17 @@
-class ApplicationError extends Error {
-  constructor(code, message, title) {
-    super(message);
-    this.code = code;
-    this.title = title;
+class Response {
+  constructor(res) {
+    this.res = res;
+  }
+
+  createResponse(
+    { message, code, error, data } = { message: "", error: null, data: null }
+  ) {
+    return this.res.status(code).json({
+      message,
+      error,
+      data,
+    });
   }
 }
 
-export default ApplicationError;
+export default Response;

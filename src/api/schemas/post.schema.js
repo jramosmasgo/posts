@@ -1,10 +1,10 @@
-import { Schema } from "mongoose";
+import mongoose from "mongoose";
 import commentSchema from "./comment.schema.js";
 import likeSchema from "./like.schema.js";
 
-const postSchema = new Schema({
+const postSchema = new mongoose.Schema({
   userCreator: {
-    type: Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     ref: "Users",
   },
   title: {
@@ -13,7 +13,7 @@ const postSchema = new Schema({
   },
   categories: [
     {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       required: true,
       ref: "Cateogories",
     },

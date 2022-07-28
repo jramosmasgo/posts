@@ -1,6 +1,6 @@
-import { model } from "mongoose";
+import mongoose from "mongoose";
 import categorySchema from "../schemas/category.schema.js";
 
-const categoryModel = model("Category",categorySchema);
+const categoryModel = mongoose.model("Category", categorySchema);
 
-export default categorySchema;
+export default categoryModel;
